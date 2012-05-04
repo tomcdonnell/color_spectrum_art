@@ -37,7 +37,7 @@ try
    $phpSelf     = $_SERVER['PHP_SELF'];
    $prevHrefStr = ($index ==                    0)? '': "href='$phpSelf?id=" . ($index - 1) . "'";
    $nextHrefStr = ($index == $nConfigurations - 1)? '': "href='$phpSelf?id=" . ($index + 1) . "'";
-   $randHrefStr =                                        "href='$phpSelf?id=random'";
+   $randHrefStr =                                       "href='$phpSelf?id=random'";
 
    $cellDimensions  = $cellDimensionsByConfigurationIndex[$index];
    $getString       = createConfigurationGetString($configurations[$index], $cellDimensions);
