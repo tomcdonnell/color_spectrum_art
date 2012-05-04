@@ -28,27 +28,22 @@ error_reporting(-1);
 
 try
 {
-   $requestedId = (array_key_exists('id', $_GET))? $_GET['id']: '0';
-
-   $n_configurations = count($configurations);
-
-   $index = ($requestedId == 'random')? rand(0, $n_configurations - 1): $requestedId;
+   $requestedId     = (array_key_exists('id', $_GET))? $_GET['id']: '0';
+   $nConfigurations = count($configurations);
+   $index           = ($requestedId == 'random')? rand(0, $nConfigurations - 1): $requestedId;
 
    if (!array_key_exists($index, $configurations)) {throw new Exception('Index out of range.');}
 
    $phpSelf     = $_SERVER['PHP_SELF'];
-   $prevHrefStr = ($index ==                     0)? '': "href='$phpSelf?id=" . ($index - 1) . "'";
-   $nextHrefStr = ($index == $n_configurations - 1)? '': "href='$phpSelf?id=" . ($index + 1) . "'";
+   $prevHrefStr = ($index ==                    0)? '': "href='$phpSelf?id=" . ($index - 1) . "'";
+   $nextHrefStr = ($index == $nConfigurations - 1)? '': "href='$phpSelf?id=" . ($index + 1) . "'";
    $randHrefStr =                                        "href='$phpSelf?id=random'";
 
    $cellDimensions  = $cellDimensionsByConfigurationIndex[$index];
    $getString       = createConfigurationGetString($configurations[$index], $cellDimensions);
    $imageUrlRect    = "converter_png/spectrum_image_png.php?$getString&viewMode=rect";
    $imageUrlCirc    = "converter_png/spectrum_image_png.php?$getString&viewMode=circ";
-   $imageAltMessage =
-   (
-      "The image could not be displayed.  An error occurred while the image was being generated."
-   );
+   $imageAltMessage = 'Generating image...';
 
    $filesJs  = array();
    $filesCss = array('style.css');
@@ -86,9 +81,7 @@ function createConfigurationGetString($configurationValuesByKey, $cellDimensions
 
 // HTML code. //////////////////////////////////////////////////////////////////////////////////////
 ?>
-<!DOCTYPE html PUBLIC
- "-//W3C//DTD XHTML 1.0 Strict//EN"
- "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html>
  <head>
 <?php
@@ -118,8 +111,8 @@ function createConfigurationGetString($configurationValuesByKey, $cellDimensions
    );
 */
 ?>
-  <div><img src='<?php echo $imageUrlRect; ?>' alt='<?php echo $imageAltMessage; ?>' /></div>
-  <div><img src='<?php echo $imageUrlCirc; ?>' alt='<?php echo $imageAltMessage; ?>' /></div>
+  <div><img src='<?php echo $imageUrlRect; ?>' alt='<?php echo $imageAltMessage; ?>'/></div>
+  <div><img src='<?php echo $imageUrlCirc; ?>' alt='<?php echo $imageAltMessage; ?>'/></div>
 <?php
 ?>
  </body>

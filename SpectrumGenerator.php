@@ -15,7 +15,7 @@
 
 // Includes. ////////////////////////////////////////////////////////////////////////////////////
 
-require_once dirname(__FILE__) . '/../library/tom/php/utils/Utils_validator.php';
+require_once dirname(__FILE__) . '/lib_tom/php/utils/UtilsValidator.php';
 
 // Class definition. ////////////////////////////////////////////////////////////////////////////
 
@@ -39,7 +39,7 @@ class SpectrumGenerator
     */
    public static function getSpectrumRows($configuration)
    {
-      Utils_validator::checkArray
+      UtilsValidator::checkArray
       (
          $configuration, array
          (
