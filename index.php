@@ -97,20 +97,6 @@ function createConfigurationGetString($configurationValuesByKey, $cellDimensions
   <a class='navLink' <?php echo $prevHrefStr; ?>>Prev</a>
   <a class='navLink' <?php echo $randHrefStr; ?>>Random</a>
   <a class='navLink' <?php echo $nextHrefStr; ?>>Next</a>
-<?php
-/*
-   $cellDimensions = $cellDimensionsByConfigurationIndex[$index];
-   $spectrumRows   = SpectrumGenerator::getSpectrumRows($configurations[$index]);
-   $black          = array('r' => 0, 'g' => 0, 'b' => 0);
-
-   echo SpectrumRowsHtmlConverter::toHtml
-   (
-      $spectrumRows,
-//      SpectrumRowsToCircleMapper::map($spectrumRows, 200, $black),
-      $cellDimensions['width'], $cellDimensions['height']
-   );
-*/
-?>
   <div><img src='<?php echo $imageUrlRect; ?>' alt='<?php echo $imageAltMessage; ?>'/></div>
   <div><img src='<?php echo $imageUrlCirc; ?>' alt='<?php echo $imageAltMessage; ?>'/></div>
 <?php
