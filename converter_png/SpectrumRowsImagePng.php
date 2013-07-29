@@ -15,7 +15,7 @@
 
 // Includes. ///////////////////////////////////////////////////////////////////////////////////////
 
-require_once dirname(__FILE__) . '/../lib_tom/php/utils/UtilsValidator.php';
+require_once dirname(__FILE__) . '/../../../lib/tom/php/utils/UtilsValidator.php';
 require_once dirname(__FILE__) . '/../mapper_circle/SpectrumRowsToCircleMapper.php';
 
 // Class definition. ///////////////////////////////////////////////////////////////////////////////
