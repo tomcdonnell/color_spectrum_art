@@ -92,7 +92,7 @@ function createConfigurationGetString($configurationValuesByKey, $cellDimensions
   <title>tomcdonnell.net - Color Spectrum Art</title>
  </head>
  <body>
-  <a class='backLink' href='../../../index.php'>Back to tomcdonnell.net</a>
+  <a class='backLink' href='../../index.php'>Back to tomcdonnell.net</a>
   <h1>Color Spectrum Art</h1>
   <a class='navLink' <?php echo $prevHrefStr; ?>>Prev</a>
   <a class='navLink' <?php echo $randHrefStr; ?>>Random</a>
